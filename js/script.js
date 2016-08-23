@@ -19,7 +19,7 @@ function printQuote(){
 
 // builds message for html, adding on citation and/or year if necessary
 function buildQuote(){
-	var quote2Print = getQuote(); 
+	var quote2Print = getRandomQuote(); 
 	var message;
 	message = "<p class='quote'>" + quote2Print.quote + "</p><p class='source'>" + quote2Print.source;
 
@@ -44,9 +44,11 @@ function buildQuote(){
 
 
 
-function getQuote() {
-  if (quotes.length == 0)                                   // if empty, reload the main list
-    quotes = viewedQuotes.splice(0, viewedQuotes.length);   // (and empty viewed list)
+function getRandomQuote() {
+  if (quotes.length === 0){                                  // if empty, reload the main list
+    quotes = viewedQuotes.splice(0, viewedQuotes.length); 
+  }   		
+  												// (and empty viewed list)
   var randNum = Math.floor(Math.random() * quotes.length);  // pick a quote at random
   var quote = quotes.splice(randNum, 1)[0];                 // take it out of the main list
   viewedQuotes.push(quote);                                 // now add it to the "viewed" list

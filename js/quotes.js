@@ -36,4 +36,4 @@ var quotes = [
 		year: "Every year"
 	}
 
-]
+];
