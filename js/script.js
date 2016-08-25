@@ -1,8 +1,8 @@
 // event listener to respond to "Show another quote" button clicks
 // when user clicks anywhere on the button, the "printQuote" function is called
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
+window.setInterval(printQuote, 3000);
 
-var intervalID = window.setInterval(printQuote, 3000);
 var viewedQuotes = [];
 
 // prints quote
@@ -21,6 +21,7 @@ function printQuote(){
 function buildQuote(){
 	var quote2Print = getRandomQuote(); 
 	var message;
+	var year;
 	message = "<p class='quote'>" + quote2Print.quote + "</p><p class='source'>" + quote2Print.source;
 
 	if(quote2Print.hasOwnProperty('citation') === true){
